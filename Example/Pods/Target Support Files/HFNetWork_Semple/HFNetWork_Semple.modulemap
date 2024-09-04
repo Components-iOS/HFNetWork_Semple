@@ -1,0 +1,6 @@
+framework module HFNetWork_Semple {
+  umbrella header "HFNetWork_Semple-umbrella.h"
+
+  export *
+  module * { export * }
+}
