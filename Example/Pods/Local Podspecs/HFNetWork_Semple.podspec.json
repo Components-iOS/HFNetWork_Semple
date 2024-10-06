@@ -1,9 +1,9 @@
 {
   "name": "HFNetWork_Semple",
-  "version": "0.1.0",
+  "version": "0.1.3",
   "summary": "网络请求",
   "description": "简单网络请求工具",
-  "homepage": "https://gitee.com/moduless/hfnet-work-semple",
+  "homepage": "https://github.com/Components-iOS",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
@@ -12,8 +12,8 @@
     "liuhongfei": "13718045729@163.com"
   },
   "source": {
-    "git": "https://gitee.com/moduless/hfnet-work-semple.git",
-    "tag": "0.1.0"
+    "git": "https://github.com/Components-iOS/HFNetWork_Semple.git",
+    "tag": "0.1.3"
   },
   "platforms": {
     "ios": "13.0"
