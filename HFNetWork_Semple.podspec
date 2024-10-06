@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'HFNetWork_Semple'
-  s.version          = '0.1.1'
+  s.version          = '0.1.3'
   s.summary          = '网络请求'
   s.description      = <<-DESC
 简单网络请求工具

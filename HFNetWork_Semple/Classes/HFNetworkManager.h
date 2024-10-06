@@ -20,6 +20,8 @@ extern NSString *USERFOURCEKICKEDOUR;
 @property (nonatomic, strong) NSDictionary *userDict;
 /// 单点登录状态码、外部设定
 @property (nonatomic, copy) NSString *statusCode;
+/// 是否打印日志
+@property (nonatomic, assign) BOOL isCanLog;
 
 + (instancetype)sharedInstance;
 

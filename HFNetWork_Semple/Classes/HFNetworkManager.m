@@ -41,7 +41,9 @@ NSString *USERFOURCEKICKEDOUR = @"USERFOURCEKICKEDOUR";
     }
 
     return [self GET:URLString parameters:parametersM progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        [self showLogWith:task parameters:parameters];
+        if (self.isCanLog) {
+            [self showLogWith:task parameters:parameters];
+        }
     
         completion(responseObject, nil);
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
@@ -64,7 +66,9 @@ NSString *USERFOURCEKICKEDOUR = @"USERFOURCEKICKEDOUR";
     }
     
     return [self POST:URLString parameters:parametersM progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        [self showLogWith:task parameters:parameters];
+        if (self.isCanLog) {
+            [self showLogWith:task parameters:parameters];
+        }
         
         completion(responseObject, nil);
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
