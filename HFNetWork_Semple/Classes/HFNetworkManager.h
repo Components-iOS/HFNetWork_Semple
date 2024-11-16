@@ -9,10 +9,7 @@
 
 #define HttpTool [HFNetworkManager sharedInstance]
 
-@interface HFNetworkManager : AFHTTPSessionManager
-
-/// 单点登录下线通知
-extern NSString *USERFOURCEKICKEDOUR;
+@interface HFNetworkManager : NSObject
 
 /// 全局参数
 @property (nonatomic, strong) NSDictionary *globalDict;
@@ -24,6 +21,12 @@ extern NSString *USERFOURCEKICKEDOUR;
 @property (nonatomic, assign) BOOL isCanLog;
 
 + (instancetype)sharedInstance;
+
+/// 设置域名
+- (void)setBaseURL:(NSString *)baseURL;
+
+/// 获取当前HTTPSessionManager
+- (AFHTTPSessionManager *)getSessionManager;
 
 /// 发起 GET 请求
 - (NSURLSessionDataTask *)GETRequest:(NSString *)URLString

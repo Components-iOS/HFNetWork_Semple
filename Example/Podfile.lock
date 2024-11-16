@@ -14,7 +14,7 @@ PODS:
   - AFNetworking/Serialization (3.2.1)
   - AFNetworking/UIKit (3.2.1):
     - AFNetworking/NSURLSession
-  - HFNetWork_Semple (0.1.3):
+  - HFNetWork_Semple (0.1.4):
     - AFNetworking (= 3.2.1)
     - Masonry (= 1.1.0)
   - Masonry (1.1.0)
@@ -33,7 +33,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   AFNetworking: cb604b1c2bded0871f5f61f5d53653739e841d6b
-  HFNetWork_Semple: 90eecf73d9eefa0fe0d9c71828e329d5ecdb90fe
+  HFNetWork_Semple: e907c580d04c99b60125c60979427b9155fdc60f
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
 
 PODFILE CHECKSUM: ed59f33b64a254fb1f872b5ee7a79b3e919b2386

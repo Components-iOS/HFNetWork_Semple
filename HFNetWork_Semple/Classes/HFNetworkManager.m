@@ -8,7 +8,11 @@
 #import "HFNetworkManager.h"
 #import "HFURLMacros.h"
 
-NSString *USERFOURCEKICKEDOUR = @"USERFOURCEKICKEDOUR";
+@interface HFNetworkManager ()
+
+@property (nonatomic, strong) AFHTTPSessionManager *sessionManager;
+
+@end
 
 @implementation HFNetworkManager
 
@@ -17,13 +21,25 @@ NSString *USERFOURCEKICKEDOUR = @"USERFOURCEKICKEDOUR";
     
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        instance = [[self alloc] initWithBaseURL:[NSURL URLWithString:[[HFURLMacros sharedInstance] baseURL]]];
-        instance.requestSerializer.timeoutInterval = 60;
-        // 设置相应的解析格式
-        instance.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/plain", @"text/json", @"text/html", @"text/javascript", @"application/octet-stream", nil];
+        instance = [[self alloc] init];
     });
     
     return instance;
+}
+
+/// 设置域名
+- (void)setBaseURL:(NSString *)baseURL {
+    HFURLMacros.sharedInstance.baseURL = baseURL;
+
+    self.sessionManager = [[AFHTTPSessionManager alloc] initWithBaseURL:[NSURL URLWithString:baseURL]];
+    self.sessionManager.requestSerializer.timeoutInterval = 60;
+    // 设置相应的解析格式
+    self.sessionManager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/plain", @"text/json", @"text/html", @"text/javascript", @"application/octet-stream", nil];
+}
+
+/// 获取当前HTTPSessionManager
+- (AFHTTPSessionManager *)getSessionManager {
+    return self.sessionManager;
 }
 
 /// 发起 GET 请求
@@ -36,11 +52,11 @@ NSString *USERFOURCEKICKEDOUR = @"USERFOURCEKICKEDOUR";
     if (parametersM != nil) {
         for (NSString *httpHeaderField in parametersM.allKeys) {
             NSString *value = parametersM[httpHeaderField];
-            [self.requestSerializer setValue:value forHTTPHeaderField:httpHeaderField];
+            [self.sessionManager.requestSerializer setValue:value forHTTPHeaderField:httpHeaderField];
         }
     }
 
-    return [self GET:URLString parameters:parametersM progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    return [self.sessionManager GET:URLString parameters:parametersM progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         if (self.isCanLog) {
             [self showLogWith:task parameters:parameters];
         }
@@ -61,11 +77,11 @@ NSString *USERFOURCEKICKEDOUR = @"USERFOURCEKICKEDOUR";
     if (parametersM != nil) {
         for (NSString *httpHeaderField in parametersM.allKeys) {
             NSString *value = parametersM[httpHeaderField];
-            [self.requestSerializer setValue:value forHTTPHeaderField:httpHeaderField];
+            [self.sessionManager.requestSerializer setValue:value forHTTPHeaderField:httpHeaderField];
         }
     }
     
-    return [self POST:URLString parameters:parametersM progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    return [self.sessionManager POST:URLString parameters:parametersM progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         if (self.isCanLog) {
             [self showLogWith:task parameters:parameters];
         }
