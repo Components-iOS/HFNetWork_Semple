@@ -22,7 +22,7 @@
 {
     [super viewDidLoad];
     
-    [HFURLMacros sharedInstance].baseURL = @"https://api.liqiang365.com/";
+    [HttpTool setBaseURL:@"https://apinext-qa.bizvideo.cn"];
     
     [self loadData];
 }
@@ -31,7 +31,7 @@
     self.view.viewState = HFViewStateLoading;
     NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
 
-    [HttpTool GETRequest:@"newCourse/api/classify/v1/getNavClassify" parameters:parameters completion:^(id json, NSError *error) {
+    [HttpTool GETRequest:@"/appapi/getAppConfiguration" parameters:parameters completion:^(id json, NSError *error) {
         NSLog(@"%@",json);
         self.view.viewState = HFViewStateDefault;
     }];

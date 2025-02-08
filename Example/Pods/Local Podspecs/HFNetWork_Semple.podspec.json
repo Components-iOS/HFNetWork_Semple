@@ -21,7 +21,7 @@
   "source_files": "HFNetWork_Semple/Classes/**/*",
   "dependencies": {
     "AFNetworking": [
-      "3.2.1"
+      "4.0.1"
     ],
     "Masonry": [
       "1.1.0"

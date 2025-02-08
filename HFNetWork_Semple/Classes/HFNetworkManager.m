@@ -56,7 +56,7 @@
         }
     }
 
-    return [self.sessionManager GET:URLString parameters:parametersM progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    return [self.sessionManager GET:URLString parameters:parametersM headers:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         if (self.isCanLog) {
             [self showLogWith:task parameters:parameters];
         }
@@ -81,7 +81,7 @@
         }
     }
     
-    return [self.sessionManager POST:URLString parameters:parametersM progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    return [self.sessionManager POST:URLString parameters:parametersM headers:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         if (self.isCanLog) {
             [self showLogWith:task parameters:parameters];
         }
