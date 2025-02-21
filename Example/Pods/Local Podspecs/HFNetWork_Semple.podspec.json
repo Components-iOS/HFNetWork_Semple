@@ -1,6 +1,6 @@
 {
   "name": "HFNetWork_Semple",
-  "version": "0.1.4",
+  "version": "0.1.6",
   "summary": "网络请求",
   "description": "简单网络请求工具",
   "homepage": "https://github.com/Components-iOS",
@@ -13,15 +13,15 @@
   },
   "source": {
     "git": "https://github.com/Components-iOS/HFNetWork_Semple.git",
-    "tag": "0.1.4"
+    "tag": "0.1.6"
   },
   "platforms": {
     "ios": "13.0"
   },
   "source_files": "HFNetWork_Semple/Classes/**/*",
   "dependencies": {
-    "AFNetworking": [
-      "4.0.1"
+    "Alamofire": [
+      "5.10.2"
     ],
     "Masonry": [
       "1.1.0"

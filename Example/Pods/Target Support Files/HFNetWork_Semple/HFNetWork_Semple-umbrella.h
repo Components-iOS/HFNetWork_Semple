@@ -11,7 +11,6 @@
 #endif
 
 #import "HFConsoleUnicode.h"
-#import "HFNetworkManager.h"
 #import "HFURLMacros.h"
 #import "LoadStateProperty.h"
 #import "UIView+LoadState.h"

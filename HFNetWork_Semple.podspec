@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'HFNetWork_Semple'
-  s.version          = '0.1.5'
+  s.version          = '0.1.6'
   s.summary          = '网络请求'
   s.description      = <<-DESC
 简单网络请求工具
@@ -20,7 +20,7 @@ Pod::Spec.new do |s|
   s.platform     = :ios, "13.0"
   s.ios.deployment_target = '13.0'
   s.source_files = 'HFNetWork_Semple/Classes/**/*'
-  s.dependency 'AFNetworking', '4.0.1'
+  s.dependency 'Alamofire', '5.10.2'
   s.dependency 'Masonry', '1.1.0'
   s.requires_arc = true
 end

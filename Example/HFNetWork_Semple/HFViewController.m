@@ -8,7 +8,7 @@
 
 #import "HFViewController.h"
 #import <HFNetWork_Semple/HFURLMacros.h>
-#import <HFNetWork_Semple/HFNetworkManager.h>
+#import <HFNetWork_Semple/HFNetWork_Semple-Swift.h>
 #import <UIView+LoadState.h>
 #import <LoadStateProperty.h>
 
@@ -22,7 +22,7 @@
 {
     [super viewDidLoad];
     
-    [HttpTool setBaseURL:@"https://apinext-qa.bizvideo.cn"];
+    [HFNetworkManager_Swift.sharedInstance setBaseURLWithBaseURL:@"https://apinext-qa.bizvideo.cn"];
     
     [self loadData];
 }
@@ -30,9 +30,13 @@
 - (void)loadData {
     self.view.viewState = HFViewStateLoading;
     NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
-
-    [HttpTool GETRequest:@"/appapi/getAppConfiguration" parameters:parameters completion:^(id json, NSError *error) {
-        NSLog(@"%@",json);
+    
+    [HFNetworkManager_Swift.sharedInstance GETRequestWithURLString:@"/appapi/getAppConfiguration" parameters:parameters completion:^(id _Nullable json, NSError * _Nullable error) {
+        if (error) {
+            NSLog(@"%@", error);
+        } else {
+            NSLog(@"%@", json);
+        }
         self.view.viewState = HFViewStateDefault;
     }];
 }

@@ -176,12 +176,12 @@ code_sign_if_enabled() {
 }
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
-  install_framework "${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/HFNetWork_Semple/HFNetWork_Semple.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
-  install_framework "${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/HFNetWork_Semple/HFNetWork_Semple.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework"
 fi

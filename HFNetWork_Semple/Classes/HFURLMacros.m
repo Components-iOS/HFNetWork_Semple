@@ -26,8 +26,7 @@
     [[NSUserDefaults standardUserDefaults] setObject:baseURL forKey:@"baseURL"];
 }
 
-- (NSString *)baseURL
-{
+- (NSString *)baseURL {
     NSString *baseURL = [[NSUserDefaults standardUserDefaults] objectForKey:@"baseURL"];
     return baseURL.length > 0 ? baseURL : @"";
 }
